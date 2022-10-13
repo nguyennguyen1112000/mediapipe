@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+h3,
+h4 {
+  margin: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+
+  > .viewers {
+    display: flex;
+    margin-bottom: 10px;
+
+    > .source,
+    > .output {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      > div {
+        position: relative;
+      }
+    }
+
+    > .output {
+      #virtual-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        object-fit: cover;
+      }
+    }
+  }
+
+  > .configuration {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    max-width: 960px;
+
+    > .card {
+      border-radius: 4px;
+      flex: 1;
+      
+      color: rgba(0, 0, 0, 0.87);
+      transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      background-color: #fff;
+      overflow: hidden;
+      margin-bottom: 20px;
+      box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.20),
+      0px 1px 1px 0px rgba(0,0,0,0.14),
+      0px 1px 3px 0px rgba(0,0,0,0.12);
+
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+
+      > div {
+        padding: 20px;
+      }
+    }
+
+    > .background {
+      button {
+        width: 58px;
+        height: 58px;
+        border-radius: 4px;
+        border: 2px solid transparent;
+        padding: 0;
+        margin: 8px 0;
+        cursor: pointer;
+        transition: 200ms;
+
+        &:hover {
+          transform: scale(1.125);
+        }
+
+        &.selected {
+          border-color: black;
+        }
+
+        > img {
+          width: calc(100% + 2px);
+          height: calc(100% + 2px);
+          margin: -1px;
+          border-radius: 4px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.customization {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin-top: 10px;
+
+  > label {
+    font-size: 15px;
+  }
+}
+
+video {
+  object-fit: unset;
+}

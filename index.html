@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="src/styles.scss" />
+    <script src="src/index.js"></script>
+  </head>
+
+  <body>
+    <main role="main">
+      <section class="viewers">
+        <div class="source">
+          <h3>Source</h3>
+          <div>
+            <video
+              id="video-source"
+              width="480"
+              height="320"
+              autoplay
+              playsinline
+            ></video>
+          </div>
+        </div>
+        <div class="output">
+          <h3>Output</h3>
+          <div>
+            <video
+              id="video-output"
+              width="480"
+              height="320"
+              autoplay
+              playsinline
+            ></video>
+            <canvas hidden id="canvas-output" width="480" height="320"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <section class="configuration">
+        <div class="background card">
+          <div>
+            <h3>Background</h3>
+            <button id="noBackground" title="none">
+              <img src="assets/RemoveIcon.png" />
+            </button>
+            <button id="blurBackground" title="blur">
+              <img src="assets/Blur.png" />
+            </button>
+            <button id="virutalBackground" title="image">
+              <img crossorigin="anonymous" src="assets/background.jpeg" />
+            </button>
+          </div>
+        </div>
+
+        <div class="controls card">
+          <div>
+            <h3>Controls</h3>
+            <div class="customization">
+              <label>Library</label>
+              <select id="librarySelect">
+                <option value="bodypix">Bodypix</option>
+                <option value="mediapipe">MediaPipe</option>
+                <option value="vectorly">Vectorly</option>
+              </select>
+            </div>
+            <div class="customization">
+              <label for="backgroundBlur"
+                >Blur Amount: <span id="blurAmount"></span
+              ></label>
+              <input
+                disabled
+                type="range"
+                id="backgroundBlur"
+                name="backgroundBlur"
+                min="1"
+                max="10"
+                value="3"
+                step="1"
+              />
+            </div>
+            <div class="customization">
+              <label for="edgeBlur"
+                >Edge Blur Amount: <span id="edgeBlurAmount"></span
+              ></label>
+              <input
+                disabled
+                type="range"
+                id="edgeBlur"
+                name="edgeBlur"
+                min="1"
+                max="10"
+                value="4"
+                step="1"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultStream">
+        <div class="stream">
+          <h3>Result Stream</h3>
+          <div>
+            <video
+              hidden
+              id="video-stream"
+              width="960"
+              height="540"
+              autoplay
+              playsinline
+            ></video>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
